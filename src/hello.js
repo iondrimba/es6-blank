@@ -5,9 +5,10 @@ export default class Hello {
   }
 
   greetings() {
-    const a = { name: 'Ion'}
+    const a = { name: 'Jon Doe'}
     const b = Object.assign({}, a);
+    const log = () => console.log('>>> Hello', b);
 
-    console.log('>>>> Hello1', b);
+    log();
   }
 }
