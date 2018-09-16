@@ -1,12 +1,12 @@
-import Hello from './hello';
+import Hello from './scripts/hello';
 
-let app = new  Hello();
+let app = new Hello();
 app.greetings();
 
-if (module.hot) {
-  module.hot.accept('./hello.js', function () {
+if (process.env.NODE_ENV === 'development' && module.hot) {
+  module.hot.accept('./scripts/hello.js', function () {
     console.log('Accepting the updated module!');
-    app = new  Hello();
+    app = new Hello();
     app.greetings();
   })
 }

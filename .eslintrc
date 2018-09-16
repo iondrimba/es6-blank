@@ -1,7 +1,5 @@
 {
   "globals": {
-    "jQuery": false,
-    "$": true
   },
   "extends": [
     "eslint:recommended"
@@ -12,15 +10,20 @@
     "node": true
   },
   "parserOptions": {
-    "ecmaVersion": 6,
+    "ecmaVersion": 8,
     "sourceType": "module"
   },
   "rules": {
     "eqeqeq": 1,
-    "curly": 2,
-    "no-console": 0,
+    "curly": 1,
+    "no-console": 1,
     "quotes": [
-      2, "single"
+      1, "single"
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": [ "./src/**/*.js" ]
+    }
+  ]
 }

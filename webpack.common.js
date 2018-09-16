@@ -1,3 +1,4 @@
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -9,6 +10,11 @@ module.exports = {
   output: {
     filename: '[name].[hash].js',
     path: path.resolve(__dirname, 'public')
+  },
+  resolve: {
+    alias: {
+      styles: path.resolve(__dirname, './src/styles/'),
+    }
   },
   module: {
     rules: [
@@ -22,6 +28,11 @@ module.exports = {
     ]
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify(process.env.NODE_ENV)
+      }
+    }),
     new CleanWebpackPlugin(['public']),
     new HtmlWebpackPlugin(),
   ]
