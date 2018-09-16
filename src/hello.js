@@ -1,10 +1,13 @@
-class Hello {
+import './styles/index.scss';
+
+export default class Hello {
   constructor() {
   }
 
   greetings() {
-    console.log('>>>> Hello1');
+    const a = { name: 'Ion'}
+    const b = Object.assign({}, a);
+
+    console.log('>>>> Hello1', b);
   }
 }
-
-export default Hello;
